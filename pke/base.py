@@ -26,7 +26,7 @@ from builtins import str
 
 # The language management should be in `pke.utils` but it would create a circular import.
 
-get_alpha_2 = lambda l: LANGUAGE_CODE_BY_NAME[l]
+get_alpha_2 = lambda l: LANGUAGE_CODE_BY_NAME.get(l, l)
 
 lang_stopwords = {get_alpha_2(l): l for l in stopwords._fileids}
 
